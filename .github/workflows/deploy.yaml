@@ -1,0 +1,26 @@
+name: Production Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-web:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Print Success Message
+        run: |
+          echo "Simulating a deployment..."
+          echo "Connected to Linux runner."
+          node -v
+          echo "Deployment successful!"
+
