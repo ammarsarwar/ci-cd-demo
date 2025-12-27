@@ -2,9 +2,13 @@
 name: Production CI-CD
 
 # THE TRIGGER: When should this run?
+
 on:
+  pull_request:
+    branches: [main]
   push:
-    branches: [ "main" ]  # Only run when code is pushed to the main branch
+    tags:
+      - 'v*' # Runs when you push a tag like v1.0
 
 # THE ENVIRONMENT: Where does the code run?
 jobs:
