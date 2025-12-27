@@ -1,3 +1,4 @@
+
 name: Production CI-CD
 
 # THE TRIGGER: When should this run?
@@ -14,6 +15,7 @@ jobs:
      test-code: # This is a second job
         runs-on: ubuntu-latest
         steps:
-          -: echo "Running tests..."
+          - run: echo "Running tests..."
+
 
 
