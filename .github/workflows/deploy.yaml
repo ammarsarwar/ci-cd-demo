@@ -12,7 +12,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
           - run: echo "Building the project..."
-     test-code: # This is a second job
+    test-code: # This is a second job
         runs-on: ubuntu-latest
         steps:
           - run: echo "Running tests..."
