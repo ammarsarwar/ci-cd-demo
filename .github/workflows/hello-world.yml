@@ -1,0 +1,29 @@
+# 1. The name of your workflow
+name: My First CI Pipeline
+
+# 2. When should this run? (The Trigger)
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# 3. What should it do?
+jobs:
+  say-hello:
+    # This defines the "Runner" (the virtual computer GitHub gives you)
+    runs-on: ubuntu-latest
+
+    # The actual steps to execute
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4 # This "copies" your code into the runner
+
+      - name: Run a one-line script
+        run: echo "Hello from GitHub Actions!"
+
+      - name: Show the current date
+        run: date
+
+      - name: Check system info
+        run: lscpu
